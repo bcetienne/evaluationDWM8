@@ -29,7 +29,6 @@ class ListController extends Controller
     {
         //Récupère tous les enregistrements des marques
         $fullBrands = Brand::all();
-        //Les places dans un tableau
         $brands = [];
         //Rempli le tableau avec comme clé, l'id de la marque et sa valeur est son nom
         foreach ($fullBrands as $value){
@@ -37,7 +36,6 @@ class ListController extends Controller
         }
         //Récupère tous les enregistrements des genres
         $fullGenres = Genre::all();
-        //Les places dans un tableau
         $genres = [];
         //Rempli le tableau avec comme clé, l'id du genre et sa valeur est son nom
         foreach ($fullGenres as $value){
@@ -45,7 +43,6 @@ class ListController extends Controller
         }
         //Récupère tous les enregistrements des niveaux
         $fullLevels = Level::all();
-        //Les places dans un tableau
         $levels = [];
         //Rempli le tableau avec comme clé, l'id du niveau et sa valeur est son nom
         foreach ($fullLevels as $value){
@@ -72,25 +69,55 @@ class ListController extends Controller
 
     /**
      * Retourne la vue 'update'
+     * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function updateOne()
+    public function update($id)
     {
-        return view('update');
+        $product = Product::find($id);
+        $fullLevels = Level::all();
+        $levels = [];
+        foreach ($fullLevels as $value){
+            $levels[$value->id] = $value->level;
+        }
+        $fullBrands = Brand::all();
+        $brands = [];
+        foreach ($fullBrands as $value){
+            $brands[$value->id] = $value->brand;
+        }
+        $fullGenres = Genre::all();
+        $genres = [];
+        foreach ($fullGenres as $value){
+            $genres[$value->id] = $value->genre;
+        }
+        return view('update', ['product' => $product, 'brands' => $brands, 'genres' => $genres, 'levels' => $levels]);
     }
 
     /**
      * Action qui envoie les informations modifiées vers la base de données
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function updateOneAction()
+    public function updateAction(Request $request, $id)
     {
-
+        $product = Product::find($id);
+        $product->name = $request->nameField;
+        $product->quantity = $request->qtyTotal;
+        $product->brand_id = $request->brandList;
+        $product->level_id = $request->levelList;
+        $product->save();
+        $product->genres()->detach();
+        $product->genres()->attach($request->genreList);
+        return redirect('/');
     }
 
     /**
      * Action qui supprime l'entrée dans la base de données
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete(Request $request, $id)
+    public function delete($id)
     {
         $product = Product::find($id);
         $product->genres()->detach();

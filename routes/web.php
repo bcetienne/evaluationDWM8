@@ -11,14 +11,15 @@
 |
 */
 
-//Accueil
+//Home
 Route::get('/', 'BaseController@index');
 
-//Liste
+//List
 Route::get('/list', 'ListController@index');
 
 //Update
-Route::get('/update/{id}', 'ListController@updateOne');
+Route::get('/update/{id}', 'ListController@update');
+Route::post('/update/launch', 'ListController@updateAction');
 
 //Delete
 Route::get('/delete/{id}', 'ListController@delete');

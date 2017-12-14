@@ -34,7 +34,7 @@
                     {{--Bouton d'édition--}}
                     <td>
                         <form action="/update/{{ $product->id }}" class="text-center">
-                            {{--Protège le champ d'une possible attaque --}}
+                            {{--Protège le champ d'une possible attaque--}}
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-info">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
