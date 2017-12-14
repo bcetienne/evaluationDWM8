@@ -2,6 +2,18 @@ body{
     background-color: #F7F4F3!important;
 }
 
+.bg-home{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../imgs/DJ_ML.jpg');
+}
+
+.text-home{
+    color: #F572A1!important;
+}
+
 .navbarPerso{
     background-color: #E6AF2E!important;
     color: #F7F4F3!important;
@@ -9,7 +21,6 @@ body{
 
 .display-1{
     padding: .5rem 1rem;
-    color: #191716;
 }
 
 .paraPerso{
@@ -33,6 +44,6 @@ body{
 }
 
 .perso-form{
-    background-color: #BEB7A4;
+    background-color: #BEB7A4!important;
     border-radius: 5px;
 }

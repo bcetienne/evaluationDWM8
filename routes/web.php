@@ -20,5 +20,9 @@ Route::get('/list', 'ListController@index');
 //Update
 Route::get('/update/{id}', 'ListController@updateOne');
 
+//Delete
+Route::get('/delete/{id}', 'ListController@delete');
+
 //Creation
-Route::get('/create', 'CreateController@index');
+Route::get('/create', 'ListController@create');
+Route::post('/create/{id}', 'ListController@createAction');
