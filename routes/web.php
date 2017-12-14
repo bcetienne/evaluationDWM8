@@ -17,5 +17,8 @@ Route::get('/', 'BaseController@index');
 //Liste
 Route::get('/list', 'ListController@index');
 
+//Update
+Route::get('/update/{id}', 'ListController@updateOne');
+
 //Creation
 Route::get('/create', 'CreateController@index');

@@ -13,11 +13,12 @@
                 <th scope="col">Marque</th>
                 <th scope="col">Style de musique</th>
                 <th scope="col">Niveau</th>
-                <th scope="col">Modifier</th>
-                <th scope="col">Supprimer</th>
+                <th scope="col" class="text-center">Modifier</th>
+                <th scope="col" class="text-center">Supprimer</th>
             </tr>
             </thead>
             <tbody>
+            {{--Affiche les informations sur chaque ligne tant qu'il y a des informations--}}
             @foreach($products as $product)
                 <tr>
                     <th scope="row">{{ $product->id }}</th>
@@ -30,8 +31,26 @@
                         @endforeach
                     </td>
                     <td>{{ ucfirst($product->level->level) }}</td>
-                    <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
-                    <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                    {{--Bouton d'édition--}}
+                    <td>
+                        <form action="/update/{{ $product->id }}" class="text-center">
+                            {{--Protège le champ d'une possible attaque --}}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-info">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </td>
+                    {{--Bouton de suppression--}}
+                    <td>
+                        <form action="/delete/{{ $product->id }}" class="text-center">
+                            {{--Protège le champ d'une possible attaque--}}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
