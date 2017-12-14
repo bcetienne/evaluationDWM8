@@ -1,0 +1,33 @@
+body{
+    background-color: #F7F4F3!important;
+}
+
+.navbarPerso{
+    background-color: #E6AF2E!important;
+    color: #F7F4F3!important;
+}
+
+.display-1{
+    padding: .5rem 1rem;
+    color: #191716;
+}
+
+.paraPerso{
+    margin-top: 3%;
+}
+
+.paraList{
+    margin-left: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.tablePerso{
+    margin-top: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.thead-perso{
+    background-color: #3D348B!important;
+    color: #E6AF2E!important;
+}
