@@ -12,11 +12,11 @@
         <br>
             {{--Affiche la valeur actuelle du stock dans la base de données et une vide--}}
             {{{ Form::label('qtyLabelExists', 'Quantité présente : ') }}} <br>
-            {{{ Form::number('qtyFieldExists', $product->quantity) }}}
+            {{{ Form::number('qtyFieldExists', $product->quantity, ['id' => 'qtyFieldExists']) }}}
         <br>
             {{{ Form::label('qtyLabelAdd', 'Quantité à ajouter : ') }}}<br>
-            {{{ Form::number('qtyFieldAdd') }}}
-            {{{ Form::number('qtyTotal') }}}
+            {{{ Form::number('qtyFieldAdd', 0, ['id' => 'qtyFieldAdd']) }}}
+            {{{ Form::hidden('qtyTotal', 0, ['id' => 'qtyTotal']) }}}
             {{--TODO: Récupérer la valeur des deux inputs, les additionner dans le total--}}
         <br>
             {{{ Form::label('brandLabel', 'Marque : ') }}} <br>
@@ -29,7 +29,7 @@
             {{--Je ne sais pas pourquoi, sans le placeholder, il ne se place pas automatiquement sur le niveau, il prend le premier de base (débutant)--}}
             {{{ Form::select('levelList', $levels, $product->level, ['placeholder' => $product->level->level]) }}}
         <br>
-            {{{ Form::submit('Modifier ce produit', ['class' => 'btn btn-outline-warning']) }}}
+            {{{ Form::submit('Modifier ce produit', ['class' => 'btn btn-outline-warning', 'onclick' => 'return calcStock()']) }}}
         {!! Form::close() !!}
     </div>
 @endsection
