@@ -22,10 +22,10 @@
             {{{ Form::select('brandList', $brands, $product->brand->brand, ['class' => 'lead form-control']) }}}
         <br>
             {{{ Form::label('genreLabel', 'Genres : ', ['class' => 'lead col-form-label labelForm']) }}} <br>
-            {{{ Form::select('genderList[]', $genres, $product->genres, ['multiple' => true, 'class' => 'lead form-control']) }}}
+            {{{ Form::select('genre[]', $genres, $product->genres, ['multiple' => true, 'class' => 'lead form-control']) }}}
         <br>
             {{{ Form::label('levelLabel', 'Niveau : ', ['class' => 'lead col-form-label labelForm']) }}} <br>
-            {{--Je ne sais pas pourquoi, sans le placeholder, il ne se place pas automatiquement sur le niveau, il prend le premier de base (débutant)--}}
+            {{--Je ne sais pas pourquoi, il ne se place pas automatiquement sur le niveau, il prend le premier de base (débutant)--}}
             {{{ Form::select('levelList', $levels, $product->level, ['class' => 'lead form-control']) }}}
         <br>
             {{{ Form::submit('Modifier ce produit', ['class' => 'btn btn-outline-warning', 'onclick' => 'return calcStock()']) }}}

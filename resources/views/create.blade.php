@@ -21,12 +21,12 @@
         <br>
         <div class="form-group">
             {{{ Form::label('genreLabel', 'Genres : ', ['class' => 'lead labelForm']) }}} <br>
-            {{{ Form::select('genderList', $genres, null, ['placeholder' => 'Sélectionnez un genre', 'multiple' => true, 'class' => 'lead form-control']) }}}
+            {{{ Form::select('genre[]', $genres, null, ['placeholder' => 'Sélectionnez un genre', 'multiple' => true, 'class' => 'lead form-control']) }}}
         </div>
         <br>
         <div class="form-group">
             {{{ Form::label('levelLabel', 'Niveau : ', ['class' => 'lead labelForm']) }}} <br>
-            {{{ Form::select('levelList', $levels, null, ['placeholder' => 'Sélectionnez un niveau', 'class' => 'lead form-control']) }}}
+            {{{ Form::select('level[]', $levels, null, ['placeholder' => 'Sélectionnez un niveau', 'class' => 'lead form-control']) }}}
         </div>
         <br>
             {{{ Form::submit('Ajouter ce produit', ['class' => 'btn btn-outline-warning']) }}}

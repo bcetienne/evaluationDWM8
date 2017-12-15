@@ -18,7 +18,6 @@
             </tr>
             </thead>
             <tbody>
-            {{--Affiche les informations sur chaque ligne tant qu'il y a des informations--}}
             @foreach($products as $product)
                 <tr>
                     <th scope="row">{{ $product->id }}</th>
@@ -27,7 +26,7 @@
                     <td class="lead">{{ ucfirst($product->brand->brand) }}</td>
                     <td class="lead">
                         @foreach($product->genres as $genre)
-                            {{ ucfirst($genre->genre) }}
+                            <span>{{ ucfirst($genre->genre) }}</span>
                         @endforeach
                     </td>
                     <td class="lead">{{ ucfirst($product->level->level) }}</td>

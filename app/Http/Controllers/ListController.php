@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Product;
 use App\Level;
 use App\Genre;
@@ -18,6 +20,8 @@ class ListController extends Controller
     {
         //Récupère tous les enregistrements des produits
         $products = Product::all();
+        //Créé une pagination en ne prenant que le nombre d'enregistrement renseigné après la fonction paginate(x)
+        //$paginations = DB::table('products')->paginate(4);
         return view('list', ['products' => $products]);
     }
 
@@ -27,33 +31,31 @@ class ListController extends Controller
      */
     public function create()
     {
-        //Récupère tous les enregistrements des marques
+        //Marques
         $fullBrands = Brand::all();
         $brands = [];
-        //Rempli le tableau avec comme clé, l'id de la marque et sa valeur est son nom
         foreach ($fullBrands as $value){
             $brands[$value->id] = $value->brand;
         }
-        //Récupère tous les enregistrements des genres
+        //Genres
         $fullGenres = Genre::all();
         $genres = [];
-        //Rempli le tableau avec comme clé, l'id du genre et sa valeur est son nom
         foreach ($fullGenres as $value){
             $genres[$value->id] = $value->genre;
         }
-        //Récupère tous les enregistrements des niveaux
+        //Niveaux
         $fullLevels = Level::all();
         $levels = [];
-        //Rempli le tableau avec comme clé, l'id du niveau et sa valeur est son nom
         foreach ($fullLevels as $value){
             $levels[$value->id] = $value->level;
         }
-        //Retourne la vue avec toutes les informations récupérées
         return view('create', ['brands' => $brands, 'genres' => $genres, 'levels' => $levels]);
     }
 
     /**
      * Action d'envoyer le nouveau produit vers la base de données
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function createAction(Request $request)
     {
@@ -63,8 +65,8 @@ class ListController extends Controller
         $product->brand_id = $request->brandList;
         $product->level_id = $request->levelList;
         $product->save();
-        $product->genres()->attach($request->genreList);
-        return redirect('/');
+        $product->genres()->attach($request->genre);
+        return redirect('/list');
     }
 
     /**
@@ -75,16 +77,19 @@ class ListController extends Controller
     public function update($id)
     {
         $product = Product::find($id);
+        //Niveaux
         $fullLevels = Level::all();
         $levels = [];
         foreach ($fullLevels as $value){
             $levels[$value->id] = $value->level;
         }
+        //Marques
         $fullBrands = Brand::all();
         $brands = [];
         foreach ($fullBrands as $value){
             $brands[$value->id] = $value->brand;
         }
+        //Genres
         $fullGenres = Genre::all();
         $genres = [];
         foreach ($fullGenres as $value){
@@ -108,7 +113,8 @@ class ListController extends Controller
         $product->level_id = $request->levelList;
         $product->save();
         $product->genres()->detach();
-        $product->genres()->attach($request->genreList);
+        $product->genres()->attach($request->genre);
+//        dd($request);
         return redirect('/');
     }
 
