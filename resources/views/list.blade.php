@@ -22,15 +22,15 @@
             @foreach($products as $product)
                 <tr>
                     <th scope="row">{{ $product->id }}</th>
-                    <td>{{ ucfirst($product->name) }}</td>
-                    <td>{{ $product->quantity }}</td>
-                    <td>{{ ucfirst($product->brand->brand) }}</td>
-                    <td>
+                    <td class="lead">{{ ucfirst($product->name) }}</td>
+                    <td class="lead">{{ $product->quantity }}</td>
+                    <td class="lead">{{ ucfirst($product->brand->brand) }}</td>
+                    <td class="lead">
                         @foreach($product->genres as $genre)
                             {{ ucfirst($genre->genre) }}
                         @endforeach
                     </td>
-                    <td>{{ ucfirst($product->level->level) }}</td>
+                    <td class="lead">{{ ucfirst($product->level->level) }}</td>
                     {{--Bouton d'édition--}}
                     <td>
                         <form action="/update/{{ $product->id }}" class="text-center">

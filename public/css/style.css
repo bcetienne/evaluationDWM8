@@ -19,11 +19,7 @@ body{
     color: #F7F4F3!important;
 }
 
-.display-1{
-    padding: .5rem 1rem;
-}
-
-.display-3{
+.display-1, .display-2, .display-3, .display-4{
     padding: .5rem 1rem;
 }
 
@@ -48,6 +44,19 @@ body{
 }
 
 .perso-form{
-    background-color: #BEB7A4!important;
-    border-radius: 5px;
+    background-color: #3D348B!important;
+    border-radius: 0.3125rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0.4375rem 0.4375rem 0.3125rem grey;
+}
+
+.containerForm{
+    margin-bottom: 3%;
+}
+
+.labelForm{
+    font-size: 1.688rem;
+    color: #F572A1;
 }

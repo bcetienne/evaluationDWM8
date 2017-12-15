@@ -1,7 +1,7 @@
 @extends('layouts.body')
 @section('title', 'Accueil')
 @section('section')
-    <div class="bg-home">
+    <div class="bg-home" title="Médée">
         <h1 class="display-1 text-home">Médée</h1>
         <h3 class="display-3 text-center text-home">Vous aimez le monde de la musique ? <br> Ça tombe bien, nous aussi.</h3>
         <p class="lead text-center paraPerso text-home">
