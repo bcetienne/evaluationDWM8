@@ -15,7 +15,7 @@ Les principales technologies utilisées pour mener à bien ce projet de validati
 L'utilisateur peut se déplacer aisément dans le site via la barre de navigation au sommet, il a la possibilité de voir la liste des produits en stock, en ajouter, en supprimer via le bouton de suppression de la liste ou bien modifier, ici aussi via le bouton dédié de la liste.
 
 ## Notes pour le formateur 
-* Entrer une URL pour être rediriger sur une page qui n'existe pas (exemple : /test).
+* Entrer une URL d'une page qui n'existe pas (exemple : /test).
 
 ## Difficultés rencontrées
 * Lors de l'ajout de produits, ceux-ci ne récupère pas les différents genres renseignés (qu'il y en ait plusieurs ou non).
