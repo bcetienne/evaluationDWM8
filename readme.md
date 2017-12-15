@@ -15,6 +15,7 @@ Les principales technologies utilisées pour mener à bien ce projet de validati
 L'utilisateur peut se déplacer aisément dans le site via la barre de navigation au sommet, il a la possibilité de voir la liste des produits en stock, en ajouter, en supprimer via le bouton de suppression de la liste ou bien modifier, ici aussi via le bouton dédié de la liste.
 
 ## Notes pour le formateur (ce dont de je suis fier et informations)
+* Les différentes bases de données sont dumpBase.sql (juste la structure des tables), dumpObjects.sql (avec des entrées dans les tables), dumpFullTest.sql (celle à préféré pour la correction, elle est a minima remplie suite aux tests donc des informations qui apparaissent seulement avec des données de cette table).
 * Entrer une URL d'une page qui n'existe pas (exemple : /test) 
 
     /!\ ATTENTION SPOIL /!\ : Si ça ne fonctionne pas voici ce que cela devrait [afficher](https://image.noelshack.com/fichiers/2017/50/5/1513347147-capture-d-ecran-2017-12-15-a-15-11-01.png).
