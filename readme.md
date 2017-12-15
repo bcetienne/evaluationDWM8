@@ -16,6 +16,7 @@ L'utilisateur peut se déplacer aisément dans le site via la barre de navigatio
 
 ## Notes pour le formateur 
 * Entrer une URL d'une page qui n'existe pas (exemple : /test).
+* Ajout de [Select2](https://select2.org/) pour une recherche plus en profondeur pour les marques.
 * La modification du stock se fait via un input caché.
 * Les seeders et factories présents n'ont pas été utilisé pour éviter de perdre trop de temps
 
