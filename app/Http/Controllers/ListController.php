@@ -99,9 +99,9 @@ class ListController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function updateAction(Request $request, $id)
+    public function updateAction(Request $request)
     {
-        $product = Product::find($id);
+        $product = Product::find($request->id);
         $product->name = $request->nameField;
         $product->quantity = $request->qtyTotal;
         $product->brand_id = $request->brandList;

@@ -1,30 +1,9 @@
 @extends('layouts.body')
 @section('title', 'Modifier')
 @section('section')
-    <h1 class="display-1">Modification du produit</h1>
+    <h1 class="display-1">{{ $product->name }}</h1>
+    <h3 class="display-3">D'ici vous pouvez modifier les informations du produit</h3>
     <div class="container">
-{{--        {!! Form::open() !!}
-            {{{ Form::hidden('id', $product->id) }}}
-            {{{ Form::label('nameLabel', 'Nom : ') }}} <br>
-            {{{ Form::text('nameField', $product->name) }}}
-        <br>
-            {{{ Form::label('qtyLabelExists', 'Quantité présente : ') }}} <br>
-            {{{ Form::number('qtyFieldExists', $product->quantity) }}}
-        <br>
-            {{{ Form::label('qtyLabelAdd', 'Quantité à ajouter : ') }}} <br>
-            {{{ Form::number('qtyFieldAdd') }}} {{{ Form::hidden('qtyTotal') }}}
-        <br>
-            {{{ Form::hidden('qtyTotal') }}}
-        <br>
-            {{{ Form::label('brandLabel', 'Marque : ') }}} <br>
-            {{{ Form::select('brandList' , $product->brand) }}}
-        <br>
-            {{{ Form::label('genreLabel', 'Genres : ') }}} <br>
-            {{{ Form::select('genderList', ['multiple' => true]) }}}
-        {!! Form::close() !!}--}}
-
-
-
         {!! Form::open(['url' => '/update/launch', 'class' => 'perso-form', 'name' => 'formUpdate']) !!}
             {{--Récupération de l'id en le cachant--}}
             {{{ Form::hidden('id', $product->id) }}}
