@@ -14,7 +14,7 @@ Les principales technologies utilisées pour mener à bien ce projet de validati
 ## Fonctionnement
 L'utilisateur peut se déplacer aisément dans le site via la barre de navigation au sommet, il a la possibilité de voir la liste des produits en stock, en ajouter, en supprimer via le bouton de suppression de la liste ou bien modifier, ici aussi via le bouton dédié de la liste.
 
-## Notes pour le formateur 
+## Notes pour le formateur (ce dont de je suis fier et informations)
 * Entrer une URL d'une page qui n'existe pas (exemple : /test).
 * Ajout de [Select2](https://select2.org/) pour une recherche plus en profondeur pour les marques.
 * La modification du stock se fait via un input caché.
