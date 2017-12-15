@@ -19,7 +19,7 @@
             {{{ Form::hidden('qtyTotal', 0, ['id' => 'qtyTotal']) }}}
         <br>
             {{{ Form::label('brandLabel', 'Marque : ', ['class' => 'lead col-form-label labelForm']) }}} <br>
-            {{{ Form::select('brandList', $brands, $product->brand->brand, ['class' => 'lead form-control']) }}}
+            {{{ Form::select('brandList', $brands, $product->brand->brand, ['class' => 'lead form-control js-example-basic-single']) }}}
         <br>
             {{{ Form::label('genreLabel', 'Genres : ', ['class' => 'lead col-form-label labelForm']) }}} <br>
             {{{ Form::select('genre[]', $genres, $product->genres, ['multiple' => true, 'class' => 'lead form-control']) }}}

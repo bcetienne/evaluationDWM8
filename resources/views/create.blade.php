@@ -16,7 +16,7 @@
         <br>
         <div class="form-group">
             {{{ Form::label('brandLabel', 'Marque : ', ['class' => 'lead labelForm']) }}} <br>
-            {{{ Form::select('brandList', $brands, null, ['placeholder' => 'Sélectionnez une marque', 'class' => 'lead form-control']) }}}
+            {{{ Form::select('brandList', $brands, null, ['placeholder' => 'Sélectionnez une marque', 'class' => 'lead form-control js-example-basic-single']) }}}
         </div>
         <br>
         <div class="form-group">

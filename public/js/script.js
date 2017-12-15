@@ -16,3 +16,10 @@ function calcStock() {
     //Insère le calcul dans l'input qui va être envoyé à la base de données
     document.getElementById('qtyTotal').value = stockTotal;
 }
+
+/**
+ * Select2
+ */
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
