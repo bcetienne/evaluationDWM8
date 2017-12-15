@@ -9,7 +9,7 @@ Le projet consiste en la création d'une boutique de musique, ici, cette boutiqu
 Pour cela, il faut faire un système CRUD (Create Read Update Delete) qui permet de gérer le stock de la boutique, en plus de cela, il faut que le site soit responsive (s'adapte à différentes tailles d'écrans), qu'il soit agréable à l'oeil sans pour autant être une création artistique.
 
 ## Les technologies utilisées 
-Les principales technologies utilisées pour mener à bien ce projet de validation sont le langage CSS et HTML, le framework CSS [Bootstrap](https://getbootstrap.com), Javascript, le framework PHP [Laravel](https://laravel.com) ([Eloquent](https://laravel.com/docs/5.5/eloquent), [Forms & HTML](https://laravelcollective.com/docs/master/html) avec [Laravel Collective](https://laravelcollective.com)), MySQL, [Vagrant](https://www.vagrantup.com). 
+Les principales technologies utilisées pour mener à bien ce projet de validation sont le langage CSS et HTML, le framework CSS [Bootstrap](https://getbootstrap.com), Javascript, le framework PHP [Laravel](https://laravel.com) ([Eloquent](https://laravel.com/docs/5.5/eloquent), [Forms & HTML](https://laravelcollective.com/docs/master/html) avec [Laravel Collective](https://laravelcollective.com)), MySQL, [Vagrant](https://www.vagrantup.com), [Select2](https://select2.org/), Git et [Github](https://github.com/). 
 
 ## Fonctionnement
 L'utilisateur peut se déplacer aisément dans le site via la barre de navigation au sommet, il a la possibilité de voir la liste des produits en stock, en ajouter, en supprimer via le bouton de suppression de la liste ou bien modifier, ici aussi via le bouton dédié de la liste.
