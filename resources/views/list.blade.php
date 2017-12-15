@@ -3,6 +3,8 @@
 @section('section')
     <h1 class="display-1">Liste des produits en stock</h1>
     <p class="lead paraList">Toutes les marques présentes ci-dessous sont déformées pour éviter tout soucis, les noms des produits ont été inventées, toute ressemblance avec la réalité serait fortuite.
+        <br>
+        <span class="badge badge-info">Info</span> L'ajout de marques, de styles de musiques, de niveaux sera dans une prochaine mise à jour. Promis <i class="em em-smiley"></i>
         @foreach($products as $product)
             @if($product->quantity < 0)
                 <br>
