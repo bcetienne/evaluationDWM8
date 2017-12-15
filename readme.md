@@ -23,7 +23,7 @@ L'utilisateur peut se déplacer aisément dans le site via la barre de navigatio
 * Les seeders et factories présents n'ont pas été utilisé pour éviter de perdre trop de temps
 
 ## Difficultés rencontrées
-* ~~Lors de l'ajout de produits, ceux-ci ne récupère pas les différents genres renseignés (qu'il y en ait plusieurs ou non).~~ Réparé
+* ~~Lors de l'ajout de produits, ceux-ci ne récupèrent pas les différents genres renseignés (qu'il y en ait plusieurs ou non).~~ Réparé
 * ~~Lors de la modification d'un produit, les valeurs enregistrées ne se mettent pas par défaut comme valeur dans les listes déroulantes (exemple le niveau, il faut 'bricoler' quelque chose qui n'est pas vraiment propre et sans intervention sur le select, la valeur n'est pas bien renvoyé (null) pour retourner un résultat lors de l'affichage de la liste à cause cette valeure null).~~ Réparé aussi bien que la valeur ne se mette pas de base sur celle renseignée.
 * Mise en place de la pagination avec Eloquent avec les codes suivants : dans le contrôleur `$paginations = DB::table('products')->paginate(4);` puis appeler la variable dans la vue en la passant dans l'array du return du controleur
 
