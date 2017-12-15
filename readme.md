@@ -22,3 +22,15 @@ L'utilisateur peut se déplacer aisément dans le site via la barre de navigatio
 ## Difficultés rencontrées
 * Lors de l'ajout de produits, ceux-ci ne récupère pas les différents genres renseignés (qu'il y en ait plusieurs ou non).
 * Lors de la modification d'un produit, les valeurs enregistrées ne se mettent pas par défaut comme valeur dans les listes déroulantes (exemple le niveau, il faut 'bricoler' quelque chose qui n'est pas vraiment propre et sans intervention sur le select, la valeur n'est pas bien renvoyé (null) pour retourner un résultat lors de l'affichage de la liste à cause cette valeure null).
+* Mise en place de la pagination avec Eloquent avec les codes suivants : dans le contrôleur `$paginations = DB::table('products')->paginate(4);` puis appeler la variable dans la vue en la passant dans l'array du return du controleur
+
+    ```PHP
+        @foreach($paginations as $pagination)
+            ...Elements du tableau
+            {{ $pagination->name }}
+            ...Elemenrs du tableau
+        @endforeach
+    ```
+    Et affichage de la pagination après le `@endforeach` avec `{{ $paginations->render() }}`.
+    
+    Le soucis est que `$paginations` retournait les `id` des niveaux par exemple (`level_id`) mais ne retournait pas le nom.
