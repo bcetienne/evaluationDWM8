@@ -2,7 +2,13 @@
 @section('title', 'Liste')
 @section('section')
     <h1 class="display-1">Liste des produits en stock</h1>
-    <p class="lead paraList">Toutes les marques présentes ci-dessous sont déformées pour éviter tout soucis, les noms des produits ont été inventées, toute ressemblance avec la réalité serait fortuite.</p>
+    <p class="lead paraList">Toutes les marques présentes ci-dessous sont déformées pour éviter tout soucis, les noms des produits ont été inventées, toute ressemblance avec la réalité serait fortuite.
+        @foreach($products as $product)
+            @if($product->quantity < 0)
+                <br>
+                Note : Les valeurs entre parenthèses à côté de certaines valeurs à 0 signifient que la valeur est négative dans la base de données.</p>
+            @endif
+        @endforeach
     <div class="tablePerso">
         <table class="table table-striped">
             <thead class="thead-perso">
@@ -22,7 +28,11 @@
                 <tr>
                     <th scope="row">{{ $product->id }}</th>
                     <td class="lead">{{ ucfirst($product->name) }}</td>
-                    <td class="lead">{{ $product->quantity }}</td>
+                    @if($product->quantity < 0)
+                        <td class="lead">0 ({{ $product->quantity }})</td>
+                    @else
+                        <td class="lead">{{ $product->quantity }}</td>
+                    @endif
                     <td class="lead">{{ ucfirst($product->brand->brand) }}</td>
                     <td class="lead">
                         @foreach($product->genres as $genre)
