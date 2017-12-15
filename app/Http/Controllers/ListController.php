@@ -115,7 +115,7 @@ class ListController extends Controller
         $product->genres()->detach();
         $product->genres()->attach($request->genre);
 //        dd($request);
-        return redirect('/');
+        return redirect('/list');
     }
 
     /**
