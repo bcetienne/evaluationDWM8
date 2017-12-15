@@ -11,8 +11,8 @@
             {{{ Form::text('nameField', $product->name) }}}
         <br>
             {{--Affiche la valeur actuelle du stock dans la base de données et une vide--}}
-            {{{ Form::label('qtyLabelExists', 'Quantité présente : ') }}} <br>
-            {{{ Form::number('qtyFieldExists', $product->quantity, ['id' => 'qtyFieldExists']) }}}
+            {{{ Form::label('qtyLabelExists', 'Quantité présente (non modifiable): ') }}} <br>
+            {{{ Form::number('qtyFieldExists', $product->quantity, ['id' => 'qtyFieldExists', 'readonly']) }}}
         <br>
             {{{ Form::label('qtyLabelAdd', 'Quantité à ajouter : ') }}}<br>
             {{{ Form::number('qtyFieldAdd', 0, ['id' => 'qtyFieldAdd']) }}}
